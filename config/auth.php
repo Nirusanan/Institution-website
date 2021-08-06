@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'signup_models',
         ],
 
         'api' => [
@@ -66,9 +66,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'signup_models' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\SignupModel::class,
         ],
 
         // 'users' => [

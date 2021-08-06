@@ -5,49 +5,52 @@
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
-             <form action="home" class="sign-in-form">
-             <h2 class="title">Sign in</h2>
-                <div class="input-field">
-                    <i class="fas fa-user"></i>
-                     <input type="text" placeholder="Username" required autofocus />
-                </div>
-                <div class="input-field">
-                     <i class="fas fa-lock"></i>
-                     <input type="password" placeholder="Password" required autofocus />
-                </div>
-                    <input class="btn solid" type="submit" value="Login" />
-                    <p class="social-text">Or Sign in with social platforms</p>
-                <div class="social-media">
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-                </form>
-                <form action="#" class="sign-up-form">
-                    <h2 class="title">Sign up</h2>
+                <form method="POST" action="{{ route('login.post') }}" class="sign-in-form">
+                    @csrf 
+                    <h2 class="title">Sign in</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" required autofocus  />
-                    </div>
-                    <div class="input-field">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" required autofocus />
+                        <input type="text" name="userName"  placeholder="Username"  required />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" required autofocus />
+                        <input type="password" name="password" placeholder="password" required />
+                    </div>
+                    <input class="btn solid" type="submit" value="Login" />
+                    <p class="social-text">Or Sign in with social platforms</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </form>
+
+                <form method="POST"  action="{{ route('register.post') }}" class="sign-up-form">
+                    @csrf 
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="userName"  placeholder="Username" required   />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email" required  />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="password" required  />
                     </div>
                         <input type="submit" class="btn" value="Sign up" />
                         <p class="social-text">Or Sign up with social platforms</p>

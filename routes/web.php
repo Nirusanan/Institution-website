@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SignupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/signup', function () {
-    return view('signup');
-});
+// Route::get('/signup', function () {
+//     return view('signup');
+// });
 
 Route::get('/home', function () {
     return view('home');
@@ -33,7 +34,13 @@ Route::get('/admin', function () {
 Route::get('contact','ContactController@getContact');  
 Route::post('contact', 'ContactController@saveContact');
 
-Route::get('signup','SignupController@index');  
-Route::post('post-login', 'SignupController@postLogin');
+// Route::get('signup','SignupController@index');  
+// Route::post('post-login', 'SignupController@postLogin');
+
+Route::get('signup', [SignupController::class, 'index'])->name('login');
+Route::post('post-login', [SignupController::class, 'postLogin'])->name('login.post'); 
+
+// Route::get('registration', [SignupController::class, 'registration'])->name('register');
+Route::post('post-registration', [SignupController::class, 'postRegistration'])->name('register.post'); 
 
 
