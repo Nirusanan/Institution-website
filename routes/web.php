@@ -30,6 +30,10 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
+Route::get('/course', function () {
+    return view('course');
+});
+
 
 Route::get('contact','ContactController@getContact');  
 Route::post('contact', 'ContactController@saveContact');
